@@ -119,3 +119,6 @@ def main():
         computer = Player("Computer")
         grid_size = int(input("Enter the grid size (at least 10 recommended): "))
         mode = input("Choose a mode (easy, medium): ")
+
+        while True:
+            game = Game(player, computer, grid_size, mode)
