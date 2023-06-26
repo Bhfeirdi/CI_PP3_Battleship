@@ -80,3 +80,7 @@ class Game:
             if self.player_grid[row][col] == 'O':
                 return (row, col)
 
+    def random_guess(self):
+        row = random.randint(0, self.grid_size - 1)
+        col = random.randint(0, self.grid_size - 1)
+        return (row, col)
