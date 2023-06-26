@@ -84,3 +84,9 @@ class Game:
         row = random.randint(0, self.grid_size - 1)
         col = random.randint(0, self.grid_size - 1)
         return (row, col)
+
+    def guess(self, player, guesser, guess_row, guess_col):
+        grid = self.player_grid if guesser == self.computer else self.computer_grid
+        if guess_row < 0 or guess_row >= self.grid_size or guess_col < 0 or guess_col >= self.grid_size:
+            print("Oops, that's off the board!.")
+            return False
