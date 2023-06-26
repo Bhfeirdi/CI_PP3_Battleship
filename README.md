@@ -105,16 +105,15 @@ There were no errors or warnings flagged.
 
 
 ## Deployment
-Use the following steps to deploy the poject to Heroku:
-1. 
-2. Login or create a Heroku account.
-3. Click the "New" button in the upper right corner and select "Create New App".
-4. Choose an app name and your region and click "Create App". Note: the app name must be unique.
-5. Go to the "Settings" tab, add the python build pack and then the node.js build pack. This is to ensure the project functions correctly with the Code Institute pre-installed template.
-6. Go to the "Deploy" tab and pick GitHub as a deployment method.
-7. Search for a repository to connect to.
-8. Click enable automatic deploys and then deploy branch.
-9. Wait for the app to build and then click on the "View" link.
+Use the following steps to deploy the poject to Heroku: 
+1. Login or create a Heroku account.
+2. Click the "New" button in the upper right corner and select "Create New App".
+3. Choose an app name and your region and click "Create App". Note: the app name must be unique.
+4. Go to the "Settings" tab, add the python build pack and then the node.js build pack. This is to ensure the project functions correctly with the Code Institute pre-installed template.
+5. Go to the "Deploy" tab and pick GitHub as a deployment method.
+6. Search for a repository to connect to.
+7. Click enable automatic deploys and then deploy branch.
+8. Wait for the app to build and then click on the "View" link.
 
 You can fork the repository by following these steps:
 1. Go to the GitHub repository.
@@ -130,9 +129,16 @@ You can clone the repository by following these steps:
 7. Press Enter to create your local clone.
 
 ## Credits
+CS Students:
+https://www.youtube.com/watch?v=MgJBgnsDcF0&t=376s&ab_channel=CSStudents
+
+ArjanCodes
+https://www.youtube.com/watch?v=fj2tuTIcUys&ab_channel=ArjanCodes
+
+Python Ninja
+https://www.youtube.com/watch?v=cwpS_ac8uk0&ab_channel=PythonNinja
 
 ### Code
 - Code Institute Python lessons.
-- Code Institute Love Sandwiches project.
 
 ## Acknowledgments
