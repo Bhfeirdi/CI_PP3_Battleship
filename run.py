@@ -22,3 +22,9 @@ class Game:
         self.player = player
         self.computer = computer
         self.grid_size = grid_size
+        self.player_grid = [['O'] * grid_size for _ in range(grid_size)]
+        self.computer_grid = [['O'] * grid_size for _ in range(grid_size)]
+        self.mode = mode
+        self.last_hit = None
+        self.tried_directions = []
+        self.player_turn = True
