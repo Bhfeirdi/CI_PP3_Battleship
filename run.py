@@ -114,11 +114,11 @@ class Game:
     
 def main():
     while True:
-        name = input("Enter your name: ")
+        name = input("Enter your name:\n")
         player = Player(name)
         computer = Player("Computer")
-        grid_size = int(input("Enter the grid size (at least 10 recommended): "))
-        mode = input("Choose a mode (easy, medium): ")
+        grid_size = int(input("Enter the grid size (at least 10 recommended):\n"))
+        mode = input("Choose a mode (easy, medium):\n")
 
         while True:
             game = Game(player, computer, grid_size, mode)
@@ -145,7 +145,7 @@ def main():
 
                 game.player_turn = not game.player_turn
 
-            play_again = input("Do you want to play again? (yes/no): ")
+            play_again = input("Do you want to play again? (yes/no):\n")
             if play_again.lower() != "yes":
                 break
 
