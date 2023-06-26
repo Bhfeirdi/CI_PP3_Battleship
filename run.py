@@ -137,3 +137,8 @@ def main():
                 else:
                     row, col = game.computer_guess()
                     print("Computer is guessing ({}, {})".format(row, col))
+                    if game.guess(game.player, game.computer, row, col):
+                        game.display_grid()
+                        computer.stats["wins"] += 1
+                        print("Game over. Computer wins!")
+                        break
