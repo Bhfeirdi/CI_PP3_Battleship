@@ -16,3 +16,5 @@ class Ship:
         
     def is_sunk(self):
         return self.hits == len(self.locations)
+
+class Game:
