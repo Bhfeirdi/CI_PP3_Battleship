@@ -111,3 +111,11 @@ class Game:
                 print("That's a miss, try again!")
                 grid[guess_row][guess_col] = 'X'
         return False
+    
+def main():
+    while True:
+        name = input("Enter your name: ")
+        player = Player(name)
+        computer = Player("Computer")
+        grid_size = int(input("Enter the grid size (at least 10 recommended): "))
+        mode = input("Choose a mode (easy, medium): ")
