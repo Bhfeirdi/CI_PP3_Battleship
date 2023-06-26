@@ -128,3 +128,9 @@ def main():
                 if game.player_turn:
                     row = int(input("{} Guess Row (0 to {}): ".format(player.name, grid_size - 1)))
                     col = int(input("{} Guess Col (0 to {}): ".format(player.name, grid_size - 1)))
+                    
+                    if game.guess(game.computer, game.player, row, col):
+                        game.display_grid()
+                        player.stats["wins"] += 1
+                        print("Game over. {} wins!".format(player.name))
+                        break
