@@ -13,3 +13,6 @@ class Ship:
     def __init__(self, locations):
         self.locations = locations
         self.hits = 0
+        
+    def is_sunk(self):
+        return self.hits == len(self.locations)
