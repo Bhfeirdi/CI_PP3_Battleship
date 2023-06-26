@@ -92,3 +92,18 @@ class Game:
             return False
         elif grid[guess_row][guess_col] == 'X' or grid[guess_row][guess_col] == '1':
             print("You've already guessed that one!'.")
+        else:
+            hit = False
+            for ship in player.ships:
+                if [guess_row, guess_col] in ship.locations:
+                    ship.hits += 1
+                    hit = True
+                    grid[guess_row][guess_col] = '1'
+                    if guesser == self.computer:
+                        self.last_hit = (guess_row, guess_col)
+                    if ship.is_sunk():
+                        print("Nailed it! You sank a battleship!")
+                        if all(ship.is_sunk() for ship in player.ships):
+                            print("Congratulations! You've sank all their battleships'!")
+                            return True
+                    break
