@@ -107,3 +107,7 @@ class Game:
                             print("Congratulations! You've sank all their battleships'!")
                             return True
                     break
+            if not hit:
+                print("That's a miss, try again!")
+                grid[guess_row][guess_col] = 'X'
+        return False
