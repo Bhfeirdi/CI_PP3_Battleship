@@ -52,3 +52,12 @@ class Game:
             row = random.randint(0, self.grid_size-length)
             col = random.randint(0, self.grid_size-1)
             return [[row+i, col] for i in range(length)]
+
+    def display_grid(self):
+        print(f"\n{self.player.name}'s Fleet Status:")
+        for row in self.player_grid:
+            print(" ".join(row))
+
+        print(f"\n{self.computer.name}'s Fleet Status:")
+        for row in self.computer_grid:
+            print(" ".join(row))
