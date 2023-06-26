@@ -18,3 +18,7 @@ class Ship:
         return self.hits == len(self.locations)
 
 class Game:
+    def __init__(self, player, computer, grid_size, mode):
+        self.player = player
+        self.computer = computer
+        self.grid_size = grid_size
