@@ -142,3 +142,9 @@ def main():
                         computer.stats["wins"] += 1
                         print("Game over. Computer wins!")
                         break
+
+                game.player_turn = not game.player_turn
+
+            play_again = input("Do you want to play again? (yes/no): ")
+            if play_again.lower() != "yes":
+                break
