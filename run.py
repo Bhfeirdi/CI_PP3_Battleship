@@ -8,3 +8,8 @@ class Player:
 
     def add_ship(self, ship):
         self.ships.append(ship)
+
+class Ship:
+    def __init__(self, locations):
+        self.locations = locations
+        self.hits = 0
