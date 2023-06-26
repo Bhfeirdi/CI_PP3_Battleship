@@ -36,3 +36,8 @@ class Game:
 
             ship_locations = self.random_ship_location(i)
             self.computer.add_ship(Ship(list(ship_locations)))
+
+        if mode == 'medium':
+            self.computer_guess = self.medium_mode_guess
+        else:
+            self.computer_guess = self.random_guess
