@@ -134,3 +134,6 @@ def main():
                         player.stats["wins"] += 1
                         print("Game over. {} wins!".format(player.name))
                         break
+                else:
+                    row, col = game.computer_guess()
+                    print("Computer is guessing ({}, {})".format(row, col))
