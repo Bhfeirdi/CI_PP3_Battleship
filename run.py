@@ -90,3 +90,5 @@ class Game:
         if guess_row < 0 or guess_row >= self.grid_size or guess_col < 0 or guess_col >= self.grid_size:
             print("Oops, that's off the board!.")
             return False
+        elif grid[guess_row][guess_col] == 'X' or grid[guess_row][guess_col] == '1':
+            print("You've already guessed that one!'.")
