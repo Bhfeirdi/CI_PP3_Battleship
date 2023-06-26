@@ -122,3 +122,9 @@ def main():
 
         while True:
             game = Game(player, computer, grid_size, mode)
+
+            while True:
+                game.display_grid()
+                if game.player_turn:
+                    row = int(input("{} Guess Row (0 to {}): ".format(player.name, grid_size - 1)))
+                    col = int(input("{} Guess Col (0 to {}): ".format(player.name, grid_size - 1)))
