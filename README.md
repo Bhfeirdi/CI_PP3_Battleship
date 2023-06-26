@@ -62,12 +62,12 @@ You must input your guesses first by row them coloumn. You should expect to see 
 - Git
 
 ## Features
-1. User defined grid sizes
+- User defined grid sizes
 ![grid_10](docs/images/grid_10.png)
 ![grid_20](docs/images/grid_20.png)
-2. Warn the user if their guess is off-grid
+- Warn the user if their guess is off-grid
 ![warn_user_off_grid](docs/images/warn_user_off_grid.png)
-3. Hit and miss feedback
+- Hit and miss feedback
 ![hit_and_miss_on_grid](docs/images/hit_and_miss_on_grid.png)
 
 ### Username Input
