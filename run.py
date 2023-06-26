@@ -1,5 +1,5 @@
 import random
-
+#use random to generate random numbers
 class Player:
     def __init__(self, name):
         self.name = name
@@ -8,7 +8,7 @@ class Player:
 
     def add_ship(self, ship):
         self.ships.append(ship)
-
+# use player class to represent a player in the game. Each player has a name, a list of ships, and stats for wins and losses.
 class Ship:
     def __init__(self, locations):
         self.locations = locations
@@ -16,7 +16,7 @@ class Ship:
         
     def is_sunk(self):
         return self.hits == len(self.locations)
-
+# use ship class to represent a ship. Each ship has a list of locations and a count of hits.
 class Game:
     def __init__(self, player, computer, grid_size, mode):
         self.player = player
@@ -28,12 +28,12 @@ class Game:
         self.last_hit = None
         self.tried_directions = []
         self.player_turn = True
+# use game class to represent the game itself. The game has a player, a computer opponent, a grid size, player grids, a game mode, and variables to track the last hit and tried directions.
 
-        # Add ships to the players
         for i in range(1, 6):
             ship_locations = self.random_ship_location(i)
             self.player.add_ship(Ship(list(ship_locations)))
-
+            
             ship_locations = self.random_ship_location(i)
             self.computer.add_ship(Ship(list(ship_locations)))
 
@@ -41,6 +41,7 @@ class Game:
             self.computer_guess = self.medium_mode_guess
         else:
             self.computer_guess = self.random_guess
+# two difficulty settings built into the game
 
     def random_ship_location(self, length):
         horizontal = random.choice([True, False])
@@ -52,6 +53,7 @@ class Game:
             row = random.randint(0, self.grid_size-length)
             col = random.randint(0, self.grid_size-1)
             return [[row+i, col] for i in range(length)]
+# generates random ship locations based on the grid size and ship length.
 
     def display_grid(self):
         print(f"\n{self.player.name}'s Fleet Status:")
@@ -79,11 +81,13 @@ class Game:
             col = random.randint(0, self.grid_size - 1)
             if self.player_grid[row][col] == 'O':
                 return (row, col)
+##implements medium difficulty guessing for the computer opponent.
 
     def random_guess(self):
         row = random.randint(0, self.grid_size - 1)
         col = random.randint(0, self.grid_size - 1)
         return (row, col)
+# generates random guesses for the computer opponent.
 
     def guess(self, player, guesser, guess_row, guess_col):
         grid = self.player_grid if guesser == self.computer else self.computer_grid
@@ -111,7 +115,9 @@ class Game:
                 print("That's a miss, try again!")
                 grid[guess_row][guess_col] = 'X'
         return False
-    
+#checks if a guess is valid and updates the player and computer grids accordingly. It also checks if a ship is sunk and determines the game outcome.    
+
+#functions as the entry point of the program. It prompts the user to enter their name, the grid size, and the game mode (easy or medium).
 def main():
     while True:
         name = input("Enter your name:\n")
@@ -120,6 +126,7 @@ def main():
         grid_size = int(input("Enter the grid size (at least 10 recommended):\n"))
         mode = input("Choose a mode (easy, medium):\n")
 
+#function has two nested while loops to handle game rounds and play again functionality. Inside the loops, it creates a new game instance and prompts the user and computer for guesses.
         while True:
             game = Game(player, computer, grid_size, mode)
 
@@ -148,6 +155,7 @@ def main():
             play_again = input("Do you want to play again? (yes/no):\n")
             if play_again.lower() != "yes":
                 break
+#prompt allows the player to choose whether to play again. If the player enters "yes," the inner loop repeats, starting a new game. If the player enters "no," the outer loop breaks, ending the program.
 
 if __name__ == "__main__":
     main()
