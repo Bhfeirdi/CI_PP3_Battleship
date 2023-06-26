@@ -28,3 +28,11 @@ class Game:
         self.last_hit = None
         self.tried_directions = []
         self.player_turn = True
+
+        # Add ships to the players
+        for i in range(1, 6):
+            ship_locations = self.random_ship_location(i)
+            self.player.add_ship(Ship(list(ship_locations)))
+
+            ship_locations = self.random_ship_location(i)
+            self.computer.add_ship(Ship(list(ship_locations)))
