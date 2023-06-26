@@ -41,3 +41,14 @@ class Game:
             self.computer_guess = self.medium_mode_guess
         else:
             self.computer_guess = self.random_guess
+
+    def random_ship_location(self, length):
+        horizontal = random.choice([True, False])
+        if horizontal:
+            row = random.randint(0, self.grid_size-1)
+            col = random.randint(0, self.grid_size-length)
+            return [[row, col+i] for i in range(length)]
+        else:
+            row = random.randint(0, self.grid_size-length)
+            col = random.randint(0, self.grid_size-1)
+            return [[row+i, col] for i in range(length)]
