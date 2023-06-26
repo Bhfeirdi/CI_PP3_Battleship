@@ -61,3 +61,22 @@ class Game:
         print(f"\n{self.computer.name}'s Fleet Status:")
         for row in self.computer_grid:
             print(" ".join(row))
+
+    def medium_mode_guess(self):
+        directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+        if self.last_hit:
+            for i in range(len(directions)):
+                if i in self.tried_directions:
+                    continue
+                r, c = self.last_hit[0] + directions[i][0], self.last_hit[1] + directions[i][1]
+                if r >= 0 and r < self.grid_size and c >= 0 and c < self.grid_size and self.player_grid[r][c] == 'O':
+                    self.tried_directions.append(i)
+                    return (r, c)
+        self.last_hit = None
+        self.tried_directions = []
+        while True:
+            row = random.randint(0, self.grid_size - 1)
+            col = random.randint(0, self.grid_size - 1)
+            if self.player_grid[row][col] == 'O':
+                return (row, col)
+
